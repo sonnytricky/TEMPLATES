@@ -1,5 +1,5 @@
 ---
-name: Gitea Actions Demo
+name: Github Actions Demo
 run-name: ${{ github.actor }} is testing out Github Actions 🚀
 on: [push]
 
