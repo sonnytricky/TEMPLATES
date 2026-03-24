@@ -36,3 +36,4 @@ jobs:
 
       - name: Check Python formatting
         run: black --check .
+        
