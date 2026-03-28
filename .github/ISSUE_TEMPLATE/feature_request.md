@@ -1,5 +1,5 @@
 ---
-name: Feature Request  # Titel der Vorlage, der beim Erstellen eines Issues angezeigt wird.
+name: 🚀 Feature request  # Titel der Vorlage, der beim Erstellen eines Issues angezeigt wird.
 about: Vorschlag für eine neue Funktion  
 title: []  # z.B."Home Assistant: - "
 labels: 

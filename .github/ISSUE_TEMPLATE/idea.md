@@ -1,5 +1,5 @@
 ---
-name: Idea
+name: 💡 idea
 about: Neue Idee oder Vorschlag
 labels:
   - idee

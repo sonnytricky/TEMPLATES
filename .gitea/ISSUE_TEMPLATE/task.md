@@ -1,9 +1,9 @@
 ---
-name: Task
+name: 📌 Task
 about: Allgemeine Aufgabe
 title: "Task: "
 labels:
-  - Aufgaben
+  - Task
 ---
 
 ## Aufgabe
