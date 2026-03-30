@@ -43,7 +43,7 @@ Beispiel:
 
 Bitte stelle sicher:
 
-- Code baut ohne Fehler
+- Das der Code ohne Fehler ist
 - Tests laufen erfolgreich
 - Dokumentation wurde aktualisiert
 
