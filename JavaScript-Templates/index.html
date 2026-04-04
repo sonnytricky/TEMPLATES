@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Template</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">PixelPulps</div>
+
+    <nav>
+      <!-- <a href="#">Home</a>
+      <a href="#">Docs</a> 
+      <a href="#">About</a> -->
+    </nav>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="theme-toggle">
+      <label class="switch">
+        <input type="checkbox" id="themeSwitch">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <h1>Willkommen 👋</h1>
+      <p>Ein Beispiel Homepage mit Cards und Buttons.</p>
+      <a href="https://github.com/sonnytricky" class="btn primary">Profil</a>
+      <a href="https://github.com/PixelPulps/" class="btn primary">Org</a>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h3>Quiz</h3>
+        <!-- <p>Beschreibung des Projekts oder Repos.</p> -->
+        <a href="https://github.com/PixelPulps/Quiz" class="btn small">
+        <span class="mdi mdi-github"></span>
+          
+        </a>
+        <a href="https://pixelpulps.github.io/Quiz/" class="btn small accent">
+          <span class="mdi mdi-play"></span>
+          Spielen
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Zahlen-Ratespiel</h3>
+        <a href="https://github.com/PixelPulps/Zahlen-Ratespiel/" class="btn small">
+        <span class="mdi mdi-github"></span>
+          
+        </a>
+        <a href="https://pixelpulps.github.io/Zahlen-Ratespiel/" class="btn small accent">
+          <span class="mdi mdi-play"></span>
+          Spielen
+        </a>
+      </div>
+
+      <div class="card">
+        <h3>Klicker</h3>
+        <a href="https://github.com/PixelPulps/" class="btn small">
+        <span class="mdi mdi-github"></span> 
+        </a>
+      <!--   <a href="" class="btn small accent">
+          <span class="mdi mdi-play"></span>
+          Spielen
+        </a> 
+      </div> -->
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 sonnytricky</p>
+  </footer>
+
+  <!-- =========================
+       DARK MODE SCRIPT
+  ========================= -->
+  <script>
+    const toggle = document.getElementById("themeSwitch");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+    function setTheme(isDark) {
+      document.body.classList.toggle("dark", isDark);
+      toggle.checked = isDark;
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
+
+    // gespeichertes Theme oder System
+    const savedTheme = localStorage.getItem("theme");
+
+    if (savedTheme) {
+      setTheme(savedTheme === "dark");
+    } else {
+      setTheme(prefersDark.matches);
+    }
+
+    // Toggle manuell
+    toggle.addEventListener("change", () => {
+      setTheme(toggle.checked);
+    });
+
+    // Systemänderung (nur wenn kein Override)
+    prefersDark.addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        setTheme(e.matches);
+      }
+    });
+  </script>
+
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+</html>
