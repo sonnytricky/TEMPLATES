@@ -15,15 +15,18 @@
 
 ---
 
-# 📦 Beispiel Template Repository Struktur
+# 📦 Beispiel Repository Struktur
 
 ```
 repo-template/
 │
-├─ .gitea/
+├─ .github/
 │  ├─ ISSUE_TEMPLATE/
 │  │  ├─ bug_report.md
-│  │  └─ feature_request.md
+│  │  ├─ feature_request.md
+│  │  ├─ idea.md
+│  │  └─ task.md
+│  ├─ workflows/
 │  └─ PULL_REQUEST_TEMPLATE.md
 │
 ├─ .gitignore
@@ -52,8 +55,6 @@ Siehe .gitignore
 
 # .gitattributes
 
-Hilft bei **Zeilenenden, Diff und Binary Files**.
-
 ```gitattributes
 Siehe .gitattributes
 ```
@@ -76,7 +77,7 @@ Kurze Beschreibung des Projekts.
 ## Installation
 
 
-git clone https://gitea.lan/repo-namen.git
+git clone https://github.com/sonnytricky/TEMPLATES.git
 cd projekt
 
 
@@ -103,13 +104,11 @@ Bitte Issues und Pull Requests verwenden.
 
 Siehe LICENSE Datei.
 
-
-
 ---
 
 # Issue Template – Bug Report
 
-`.gitea/ISSUE_TEMPLATE/bug_report.md`
+`.github/ISSUE_TEMPLATE/bug_report.md`
 
 ```yaml
 ---
@@ -146,13 +145,13 @@ Falls vorhanden.
 
 # Issue Template – Feature Request
 
-`.gitea/ISSUE_TEMPLATE/feature_request.md`
+`.github/ISSUE_TEMPLATE/feature_request.md`
 
 ```yaml
 ---
 name: Feature Request
 about: Neue Funktion vorschlagen
-labels: Features
+labels: features
 assignees: ''
 ---
 # Beschreibung der Idee
@@ -176,7 +175,7 @@ Andere mögliche Lösungen.
 
 # Pull Request Template
 
-`.gitea/PULL_REQUEST_TEMPLATE.md`
+`.github/PULL_REQUEST_TEMPLATE.md`
 
 ```markdown
 ## Beschreibung
