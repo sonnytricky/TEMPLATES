@@ -2,7 +2,7 @@
 name: 📌 Task
 about: Allgemeine Aufgabe
 labels:
-  - Task
+  - task
 ---
 
 ## Aufgabe
