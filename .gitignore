@@ -28,8 +28,8 @@
 !*/.github/workflows/
 !*/.images/
 !*/JavaScript-Templates/
-!*/workflows/
-
+!*/workflows/GITEA/
+!*/workflows/GITHUB/
 
 ##############################################
 # Ausnahme: diese Dateien NICHT ignorieren
@@ -59,7 +59,7 @@
 !/JavaScript-Templates/index.html
 !/JavaScript-Templates/script.js
 !/JavaScript-Templates/style.css
-!/workflows/Test.md
+!/workflows/GITEA/deploy.yml
 !/.gitattributes
 !/.gitignore
 # WICHTIG: .yamllint <-> ignoriert Fehler für Stil

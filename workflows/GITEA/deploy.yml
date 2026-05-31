@@ -1,0 +1,76 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches:
+      - main
+
+    # Optional: Workflow nur ausführen, wenn bestimmte Dateien
+    # oder Ordner geändert wurden.
+    #
+    # paths:
+    #   - 'index.html'
+    #   - 'assets/**'
+    #   - 'css/**'
+    #   - 'js/**'
+    #
+    # Beispiel:
+    # paths:
+    #   - 'site/**'
+
+    # Alternativ: bestimmte Dateien/Ordner ignorieren.
+    #
+    # paths-ignore:
+    #   - 'README.md'
+    #   - '.gitignore'
+    #   - '.gitea/**'
+
+  # Manueller Start über die Gitea-Weboberfläche
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: docker
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          set -eu
+
+          rm -rf dist
+          mkdir -p dist
+
+          # Beispiel für eine einfache statische Seite.
+          # Hier später Hugo, MkDocs, Vite usw. einbauen.
+          cp index.html dist/index.html
+
+      - name: Deploy to Pages
+        env:
+          OWNER: ${{ gitea.repository_owner }}
+          REPO: ${{ gitea.event.repository.name }}
+        run: |
+          set -eu
+
+          TARGET="/pages/${OWNER}/${REPO}"
+          TMP="/pages/.deploy-${OWNER}-${REPO}"
+
+          echo "Deploying to: ${TARGET}"
+
+          # Temporäres Deployment-Verzeichnis vorbereiten
+          rm -rf "${TMP}"
+          mkdir -p "${TMP}"
+
+          # Neue Dateien kopieren
+          cp -a dist/. "${TMP}/"
+
+          # Altes Deployment ersetzen
+          rm -rf "${TARGET}"
+          mkdir -p "$(dirname "${TARGET}")"
+          mv "${TMP}" "${TARGET}"
+
+          echo "Deployment finished."
+          echo "Available at:"
+          echo "/${OWNER}/${REPO}/"
